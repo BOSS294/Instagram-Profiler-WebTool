@@ -1,0 +1,98 @@
+/* Base Styles */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #000; /* Dark background */
+    color: #fff; /* White text */
+}
+
+/* Navigation Bar Styling */
+.hacker-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #111; /* Darker background for the nav */
+    box-shadow: 0px 8px 20px rgba(255, 255, 255, 0.15); /* Stronger white shadow */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    animation: slideIn 0.6s ease-out;
+}
+
+/* Tool Name Styling */
+.nav-left .tool-name {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+/* Nav Links Container */
+.nav-right {
+    display: flex; /* Ensures links are side by side */
+    align-items: center; /* Vertically aligns links */
+    margin-right: 25px;
+}
+
+/* Nav Links Styling */
+.nav-right .nav-link {
+    margin-left: 10px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    padding: 5px 16px;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.nav-right .nav-link .material-icons {
+    margin-right: 10px;
+    font-size: 22px;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.nav-right .nav-link:hover {
+    transform: translateY(-8px); /* More pronounced hover effect */
+    color: #00ff00; /* Hacker green color on hover */
+}
+
+.nav-right .nav-link:hover .material-icons {
+    color: #00ff00; /* Change icon color on hover */
+    transform: rotate(15deg); /* Slight rotation on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hacker-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+    .nav-right {
+        flex-direction: column; /* Stacks links vertically on small screens */
+        width: 100%;
+        margin-top: 15px;
+    }
+    .nav-right .nav-link {
+        margin: 10px 0;
+        padding: 10px 20px;
+        width: 100%;
+        text-align: left;
+        border-left: 2px solid #00ff00; /* Add a hacker-style border on the left */
+    }
+}
+
+/* Animation on Page Load */
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
